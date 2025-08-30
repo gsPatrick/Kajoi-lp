@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { FaStar } from 'react-icons/fa'; // Ícone de estrela
+import { FaStar } from 'react-icons/fa';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,50 +11,20 @@ import 'swiper/css/pagination';
 
 import styles from './Testimonials.module.css';
 
-// DADOS ATUALIZADOS com base na sua imagem (incluindo rating)
 const testimonialsData = [
-  {
-    name: "Rafael Bortoli Debarba",
-    quote: "Excelente atendimento. Diagnóstico justo.",
-    rating: 5,
-  },
-  {
-    name: "Felipe Eduardo",
-    quote: "Empresa com profissionais competentes e preço justo.",
-    rating: 5,
-  },
-  {
-    name: "Adilson Schreiber Junior",
-    quote: "Excelentes profissionais, realizando o trabalho com prudência e transparência. Atendimento diferenciado. Recomendo.",
-    rating: 5,
-  },
-  {
-    name: "Marcos Fratelli",
-    quote: "Estava com problema em meu notebook... Encontrei um excelente profissional, altamente capacitado, agilidade no atendimento, e rápido no conserto. Indico a qualquer que precise de um bom profissional de confiança.",
-    rating: 5,
-  },
-  {
-    name: "NIARA PAIVA",
-    quote: "Melhor atendimento de Joinville, além de super educados e atenciosos, consertaram meu computador e não cobraram por uma parte que eu não tinha pedido! Recomendo para todos!!!",
-    rating: 5,
-  },
-  {
-    name: "Jessica Wilbert",
-    quote: "Meu notebook não estava ligando... eles verificaram o carregador sem cobrar nada por isso. Com certeza voltarei sempre que precisar, ganharam minha confiança!",
-    rating: 5,
-  }
+  { name: "Rafael Bortoli Debarba", quote: "Excelente atendimento. Diagnóstico justo.", rating: 5 },
+  { name: "Felipe Eduardo", quote: "Empresa com profissionais competentes e preço justo.", rating: 5 },
+  { name: "Adilson Schreiber Junior", quote: "Excelentes profissionais, realizando o trabalho com prudência e transparência. Atendimento diferenciado. Recomendo.", rating: 5 },
+  { name: "Marcos Fratelli", quote: "Estava com problema em meu notebook... Encontrei um excelente profissional, altamente capacitado, agilidade no atendimento, e rápido no conserto. Indico a qualquer que precise de um bom profissional de confiança.", rating: 5 },
+  { name: "NIARA PAIVA", quote: "Melhor atendimento de Joinville, além de super educados e atenciosos, consertaram meu computador e não cobraram por uma parte que eu não tinha pedido! Recomendo para todos!!!", rating: 5 },
+  { name: "Jessica Wilbert", quote: "Meu notebook não estava ligando... eles verificaram o carregador sem cobrar nada por isso. Com certeza voltarei sempre que precisar, ganharam minha confiança!", rating: 5 }
 ];
 
-// Componente para renderizar as estrelas
-const StarRating = ({ rating }) => {
-  return (
-    <div className={styles.starRating}>
-      {[...Array(rating)].map((_, i) => (
-        <FaStar key={i} size={16} />
-      ))}
-    </div>
-  );
-};
+const StarRating = ({ rating }) => (
+  <div className={styles.starRating}>
+    {[...Array(rating)].map((_, i) => <FaStar key={i} size={16} />)}
+  </div>
+);
 
 const Testimonials = () => {
   const sectionVariants = {
@@ -78,26 +48,14 @@ const Testimonials = () => {
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           loop={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           navigation={true}
-          // CONFIGURAÇÃO RESPONSIVA DO CARROSSEL
           spaceBetween={30}
           slidesPerView={1}
           breakpoints={{
-            // Quando a largura da tela for >= 768px
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            // Quando a largura da tela for >= 1024px
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
+            768: { slidesPerView: 2, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
           className={styles.mySwiper}
         >
@@ -105,12 +63,11 @@ const Testimonials = () => {
             <SwiperSlide key={index} className={styles.slide}>
               <div className={styles.testimonialCard}>
                 <div className={styles.cardHeader}>
-                  <div className={styles.avatar}>
-                    {testimonial.name.charAt(0)}
-                  </div>
+                  <div className={styles.avatar}>{testimonial.name.charAt(0)}</div>
                   <StarRating rating={testimonial.rating} />
                 </div>
-                <p className={styles.quoteText}>"{testimonial.quote}"</p>
+                {/* === CORREÇÃO APLICADA AQUI === */}
+                <p className={styles.quoteText}>&ldquo;{testimonial.quote}&rdquo;</p>
                 <p className={styles.authorName}>– {testimonial.name}</p>
               </div>
             </SwiperSlide>

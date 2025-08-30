@@ -6,8 +6,8 @@ import styles from './StatsBar.module.css';
 
 const statsData = [
   { value: 8000, label: "Equipamentos Reparados", suffix: "+" },
-  { value: 10, label: "Anos de Experiência", suffix: "" },
-  { value: 98, label: "Satisfação dos Clientes", suffix: "%" }
+  { value: 10, label: "Anos de Experiência", suffix: "+" },
+  { value: 100, label: "Satisfação dos Clientes", suffix: "%" }
 ];
 
 const AnimatedCounter = ({ toValue, suffix }) => {

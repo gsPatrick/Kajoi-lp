@@ -5,15 +5,10 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  
-  /* NOVO FUNDO PRETO COM EFEITO DE VIDRO ESCURO */
   background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  
-  /* Borda sutil para separar do conteúdo */
   border-bottom: 1px solid #333;
-  transition: background-color 0.3s ease;
 }
 
 .container {
@@ -25,17 +20,10 @@
   align-items: center;
 }
 
-.logoLink {
-  display: flex;
-  align-items: center;
-}
+.logoLink { display: flex; align-items: center; }
 
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.navList {
+/* --- NAVEGAÇÃO DESKTOP --- */
+.navDesktop .navList {
   list-style: none;
   display: flex;
   gap: 2.5rem;
@@ -45,12 +33,11 @@
 .navLink {
   font-family: var(--font-body);
   font-weight: 500;
-  /* COR DO TEXTO ALTERADA PARA BRANCO */
-  color: var(--white); 
+  color: var(--white);
   text-decoration: none;
   position: relative;
   padding-bottom: 8px;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease;
 }
 
 .navLink::after {
@@ -60,30 +47,17 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--indigo-dye); /* Underline roxo continua ótimo */
+  background-color: var(--indigo-dye);
   transform: scaleX(0);
   transform-origin: bottom right;
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.4s ease;
 }
 
-.navLink:hover {
-  color: var(--indigo-dye);
-}
+.navLink:hover { color: var(--indigo-dye); }
+.navLink:hover::after { transform: scaleX(1); transform-origin: bottom left; }
 
-.navLink:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* O roxo se destaca no fundo preto */
-.activeLink {
-  color: var(--indigo-dye);
-}
-
-.activeLink::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
+.activeLink { color: var(--indigo-dye); }
+.activeLink::after { transform: scaleX(1); transform-origin: bottom left; }
 
 .navLinkCta {
   font-family: var(--font-title);
@@ -96,7 +70,74 @@
 }
 
 .navLinkCta:hover {
-  background-color: #6a1b9a; /* Roxo um pouco mais claro para destacar */
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(75, 0, 130, 0.4);
+  background-color: #6a1b9a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(75, 0, 130, 0.3);
+}
+
+/* --- ESTILOS MOBILE --- */
+.menuButton {
+  display: none; /* Escondido por padrão */
+  cursor: pointer;
+  z-index: 1100; /* Fica acima do menu overlay quando o menu está fechando */
+  color: var(--white);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileNavList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.mobileNavLink {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--indigo-dye);
+}
+
+.mobileNavLinkCta {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  background-color: var(--indigo-dye);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* --- MEDIA QUERY PARA ATIVAR O MODO RESPONSIVO --- */
+@media (max-width: 900px) {
+  .navDesktop {
+    display: none; /* Esconde a navegação de desktop */
+  }
+
+  .menuButton {
+    display: block; /* Mostra o botão hambúrguer */
+  }
 }

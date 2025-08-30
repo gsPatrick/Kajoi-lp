@@ -1,0 +1,72 @@
+.badgeContainer {
+  position: relative;
+  width: 280px;
+  padding: 3px; /* Espaço para o brilho aparecer */
+  border-radius: 20px;
+  overflow: hidden; /* Garante que o brilho não vaze */
+  margin: 2.5rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glowEffect {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%; /* Maior que o container para o efeito de rotação */
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    var(--indigo-dye),
+    #ff7eb9,
+    #7dffb3,
+    #a881ff,
+    var(--indigo-dye)
+  );
+  z-index: 1;
+  animation: rotateGlow 4s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotateGlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.badgeContent {
+  position: relative;
+  z-index: 2;
+  background-color: #1a1a1a; /* Fundo escuro para destacar o brilho */
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  border-radius: 18px; /* Ligeiramente menor que o container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.trophyIcon {
+  font-size: 2.5rem;
+  color: #ffd700; /* Dourado */
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: #f5b942;
+}
+
+.badgeText {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}

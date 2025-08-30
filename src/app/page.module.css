@@ -1,0 +1,21 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--white);
+}
+
+.placeholderTitle {
+  font-size: 2.5rem;
+  color: var(--indigo-dye);
+  margin-bottom: 1rem;
+}
+
+.placeholderText {
+  font-size: 1.2rem;
+  color: var(--black);
+}

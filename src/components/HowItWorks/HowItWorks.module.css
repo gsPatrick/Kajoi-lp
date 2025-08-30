@@ -1,0 +1,130 @@
+.howItWorksSection {
+  padding: 6rem 0;
+  background-color: #f9f9f9; /* Fundo cinza claro para destacar os cards */
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #666;
+  margin-bottom: 5rem;
+}
+
+.stepsContainer {
+  display: flex;
+  justify-content: space-between;
+  /* IMPORTANTE: Garante que os itens se estiquem para a mesma altura */
+  align-items: stretch;
+  position: relative;
+}
+
+.stepItem {
+  /* O card em si agora é um flex container vertical */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  max-width: 320px;
+  
+  /* Polimento visual */
+  background-color: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--light-gray);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  min-height: 80px; /* Garante que não encolha */
+  border-radius: 50%;
+  background-color: var(--indigo-dye);
+  color: var(--white);
+  box-shadow: 0px 10px 25px rgba(75, 0, 130, 0.2);
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.stepNumber {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: var(--white);
+  color: var(--indigo-dye);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-weight: 700;
+  border: 2px solid var(--indigo-dye);
+}
+
+.textContent {
+  /* Este container permite que o texto cresça sem afetar o layout geral */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz este elemento ocupar o espaço restante, empurrando o conteúdo para baixo */
+}
+
+.stepTitle {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+}
+
+.stepDescription {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.connector {
+  flex-grow: 1;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #d0d0d0, #d0d0d0 10px, transparent 10px, transparent 20px);
+  margin: 40px 0;
+  transform-origin: left;
+}
+
+@media (max-width: 820px) { /* Ponto de quebra um pouco maior */
+  .stepsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .stepItem {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .connector {
+    width: 3px;
+    height: 80px;
+    margin: 0;
+    transform-origin: top;
+    background: repeating-linear-gradient(180deg, #d0d0d0, #d0d0d0 10px, transparent 10px, transparent 20px);
+  }
+}

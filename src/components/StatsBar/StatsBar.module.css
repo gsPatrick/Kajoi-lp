@@ -1,0 +1,32 @@
+.statsSection {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid var(--light-gray);
+}
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.statItem {
+  text-align: center;
+}
+.statValue {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 8vw, 4rem);
+  color: var(--black);
+  line-height: 1;
+}
+.statValue span {
+  color: var(--indigo-dye); /* Destaca o número */
+}
+.statLabel {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}

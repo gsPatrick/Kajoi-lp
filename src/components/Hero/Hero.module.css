@@ -1,0 +1,92 @@
+.heroSection {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Garante que nada saia dos limites */
+  color: var(--white);
+  text-align: center;
+}
+
+.videoBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cobre todo o espaço sem distorcer */
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  /* Efeitos Cinematográficos */
+  filter: blur(5px) grayscale(30%); /* Aplica o blur e um leve P&B */
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Fica entre o vídeo e o conteúdo */
+
+  /* Gradiente escuro para dar profundidade e melhorar a leitura */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.7)
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3; /* Fica na frente de tudo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.headline {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Tamanho de fonte responsivo */
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para legibilidade */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.subheadline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.ctaButton {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.1rem;
+  background-color: var(--indigo-dye);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 20px rgba(75, 0, 130, 0.3);
+}
+
+/* O hover é gerenciado pelo Framer Motion, mas podemos ter um fallback */
+.ctaButton:hover {
+  background-color: #3a006f;
+  transform: translateY(-3px);
+}   

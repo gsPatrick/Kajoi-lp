@@ -1,0 +1,109 @@
+.contactSection {
+  padding: 6rem 0;
+  background-color: #f9f9f9;
+  border-top: 1px solid var(--light-gray);
+}
+
+.container {
+  width: 90%;
+  max-width: 700px; /* Mais estreito para focar no formulário */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  background-color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--indigo-dye);
+  box-shadow: 0 0 0 3px rgba(75, 0, 130, 0.1);
+}
+
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background-color: var(--indigo-dye);
+  color: var(--white);
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(75, 0, 130, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* ... estilos do container, title, subtitle ... */
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem; /* Botão maior */
+    background-color: var(--indigo-dye);
+    color: var(--white);
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 4px 20px rgba(75, 0, 130, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.submitButton:hover {
+    background-color: #3a006f;
+    transform: translateY(-3px);
+}
+
+.submitButton:hover {
+  background-color: #3a006f;
+}

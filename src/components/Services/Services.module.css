@@ -1,0 +1,129 @@
+.servicesSection {
+  padding: 6rem 0;
+  background-color: #f9f9f9;
+  border-top: 1px solid var(--light-gray);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title, .subtitle { /* ... estilos existentes ... */ }
+.title { font-size: clamp(2rem, 5vw, 2.5rem); color: var(--black); margin-bottom: 0.5rem; }
+.subtitle { font-size: clamp(1rem, 2.5vw, 1.15rem); color: #666; margin-bottom: 4rem; }
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* BASE DO CARD */
+.serviceCard {
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--light-gray);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.cardHeader {
+  display: flex;
+  flex-wrap: wrap; /* Permite que a tag quebre a linha se necessário */
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; height: 50px; min-width: 50px;
+  border-radius: 50%;
+}
+
+.cardTitle {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* --- DETALHES DO SERVIÇO (CHECKLIST) --- */
+.detailsList {
+  list-style: none;
+  padding: 0;
+  margin-top: auto; /* Empurra para o final */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.detailIcon { margin-top: 3px; min-width: 16px; }
+.checkIcon { color: #28a745; }
+.crossIcon { color: #dc3545; } /* Vermelho para atenção */
+
+/* --- TAGS ESPECIAIS --- */
+.guaranteeTag {
+  padding: 0.75rem 0;
+  text-align: center;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.specialtyTag {
+  background-color: #ffe485;
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-title);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* --- ESTILOS DOS CARDS ESPECIAIS --- */
+
+/* CARD DE ESPECIALIDADE */
+.specialty {
+  background: linear-gradient(145deg, #b187d6, #c5aad8); /* Gradiente roxo escuro */
+  color: var(--white);
+  border: none;
+}
+.specialty .cardTitle, .specialty .cardDescription, .specialty .detailItem { color: var(--white); }
+.specialty .iconWrapper { background-color: rgba(255, 255, 255, 0.1); color: var(--white); }
+.specialty .guaranteeTag { background-color: #ffd700; color: var(--black); }
+
+/* CARD EM DESTAQUE */
+.featured { border: 2px solid var(--indigo-dye); }
+.featured .guaranteeTag { background-color: #f4eefc; color: var(--indigo-dye); }

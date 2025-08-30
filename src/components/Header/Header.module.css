@@ -1,0 +1,102 @@
+.header {
+  width: 100%;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  
+  /* NOVO FUNDO PRETO COM EFEITO DE VIDRO ESCURO */
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Borda sutil para separar do conteúdo */
+  border-bottom: 1px solid #333;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-weight: 500;
+  /* COR DO TEXTO ALTERADA PARA BRANCO */
+  color: var(--white); 
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--indigo-dye); /* Underline roxo continua ótimo */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.navLink:hover {
+  color: var(--indigo-dye);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* O roxo se destaca no fundo preto */
+.activeLink {
+  color: var(--indigo-dye);
+}
+
+.activeLink::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.navLinkCta {
+  font-family: var(--font-title);
+  font-weight: 700;
+  background-color: var(--indigo-dye);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navLinkCta:hover {
+  background-color: #6a1b9a; /* Roxo um pouco mais claro para destacar */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(75, 0, 130, 0.4);
+}

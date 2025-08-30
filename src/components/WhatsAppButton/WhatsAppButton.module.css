@@ -1,0 +1,29 @@
+
+.whatsappButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366; /* Cor oficial do WhatsApp */
+  color: var(--white);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #25D366;
+  z-index: -1;
+}

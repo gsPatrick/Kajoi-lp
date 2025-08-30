@@ -1,0 +1,88 @@
+.trustBarSection {
+  padding: 2.5rem 0;
+  background-color: var(--black);
+  border-bottom: 1px solid #333; /* Borda sutil no fundo preto */
+  position: relative; /* Essencial para sobrepor elementos */
+  overflow: hidden; /* Esconde o marquee que sai da tela */
+}
+
+/* --- Efeito de Marquee (Texto Deslizante) --- */
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Gradiente para suavizar as bordas do texto */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.marqueeContent {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  white-space: nowrap; /* Impede que o texto quebre linha */
+  
+  /* Animação que move o conteúdo */
+  animation: scrollMarquee 40s linear infinite;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222; /* Cinza bem escuro, para ser um detalhe de fundo */
+  text-transform: uppercase;
+  padding: 0 2rem;
+}
+
+.separatorIcon {
+  color: var(--indigo-dye);
+  opacity: 0.5;
+  margin-left: 2rem;
+  font-size: 1rem;
+}
+
+@keyframes scrollMarquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    /* Move o conteúdo exatamente pela metade (o tamanho de uma lista) */
+    transform: translateX(-50%);
+  }
+}
+
+
+/* --- Wrapper do Selo --- */
+
+.badgeWrapper {
+  /* Garante que o selo fique no centro e acima do marquee */
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pequeno ajuste no margin do selo para se encaixar melhor */
+.badgeWrapper > div {
+  margin: 0;
+}

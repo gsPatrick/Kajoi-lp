@@ -1,0 +1,100 @@
+.footer {
+  background-color: var(--black);
+  color: #a0a0a0; /* Um cinza mais suave que o branco puro */
+  padding: 4rem 0 2rem 0;
+  border-top: 4px solid var(--indigo-dye); /* Detalhe de marca */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Bloco principal com logo e redes sociais */
+.brandBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.description {
+  max-width: 450px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: var(--white);
+  background-color: #222;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.socialLink:hover {
+  background-color: var(--indigo-dye);
+  transform: translateY(-4px);
+}
+
+/* Navegação horizontal */
+.footerNav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Garante responsividade */
+  gap: 2.5rem;
+  margin: 0 auto 3rem auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #333; /* Separador sutil */
+}
+
+.navLink {
+  color: var(--white);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--indigo-dye);
+}
+
+/* Linha final com créditos */
+.footerBottom {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.devCredit {
+  margin-top: 0.5rem;
+}
+
+.devLink {
+  color: #ccc;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.devLink:hover {
+  color: var(--indigo-dye);
+}
+
+@media (max-width: 768px) {
+  .footerNav {
+    gap: 1.5rem;
+  }
+}

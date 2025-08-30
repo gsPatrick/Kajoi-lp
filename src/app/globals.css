@@ -1,26 +1,45 @@
-@import "tailwindcss";
+/* src/app/globals.css */
 
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* Reset básico e definição de variáveis de cor */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #FFFFFF;
+  --indigo-dye: #4B0082; /* Roxo Intenso */
+  --black: #000000;
+  --light-gray: #EAEAEA;
+
+  --font-title: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  /* === MÁGICA DO SCROLL SUAVE APLICADA AQUI === */
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Ajuste este valor se a altura do header mudar */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: var(--indigo-dye);
 }

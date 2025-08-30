@@ -1,0 +1,224 @@
+.testimonialsSection {
+  padding: 6rem 0;
+  background-color: var(--white);
+  border-top: 1px solid var(--light-gray);
+  position: relative;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #666;
+  margin-bottom: 4rem;
+}
+
+.swiperContainer {
+  position: relative;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border: 1px solid var(--light-gray);
+}
+
+.quoteIcon {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-size: 8rem;
+  color: var(--indigo-dye);
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.quoteText {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.authorInfo {
+  margin-top: 1rem;
+}
+
+.authorName {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--black);
+}
+
+.authorService {
+  font-size: 0.9rem;
+  color: var(--indigo-dye);
+  margin-top: 0.25rem;
+}
+
+/* === CORREÇÃO APLICADA ABAIXO === */
+
+/* Agora os seletores :global estão "ancorados" na classe local .swiperContainer */
+
+.swiperContainer :global(.swiper-button-next),
+.swiperContainer :global(.swiper-button-prev) {
+  color: var(--indigo-dye) !important;
+  transition: transform 0.2s ease;
+}
+
+.swiperContainer :global(.swiper-button-next:hover),
+.swiperContainer :global(.swiper-button-prev:hover) {
+  transform: scale(1.2);
+}
+
+.swiperContainer :global(.swiper-pagination-bullet) {
+  background-color: #aaa !important;
+  opacity: 1;
+}
+
+.swiperContainer :global(.swiper-pagination-bullet-active) {
+  background-color: var(--indigo-dye) !important;
+}a.testimonialsSection {
+  padding: 6rem 0;
+  background-color: #f9f9f9; /* Fundo cinza claro da seção */
+  border-top: 1px solid var(--light-gray);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #666;
+  margin-bottom: 4rem;
+}
+
+.mySwiper {
+  padding-bottom: 4rem !important; /* Espaço para a paginação */
+}
+
+/* O slide em si é apenas um container flex */
+.slide {
+  height: auto; /* Permite que o card defina a altura */
+  display: flex;
+}
+
+.testimonialCard {
+  /* Design do card */
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  width: 100%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+  
+  /* CHAVE PARA SIMETRIA: Flexbox vertical */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* O card ocupa toda a altura do slide */
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  background-color: var(--indigo-dye);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.starRating {
+  display: flex;
+  gap: 4px;
+  color: #f5b942; /* Cor de estrela (dourado) */
+}
+
+.quoteText {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  
+  /* CHAVE PARA SIMETRIA: Faz o texto ocupar o espaço disponível */
+  flex-grow: 1;
+}
+
+.authorName {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--black);
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* ESTILIZAÇÃO CUSTOMIZADA DO SWIPER (CORREÇÃO DE ANTES JÁ INCLUÍDA) */
+.container :global(.swiper-button-next),
+.container :global(.swiper-button-prev) {
+  color: var(--indigo-dye) !important;
+  transition: transform 0.2s ease;
+  top: 50%;
+  transform: translateY(-70%); /* Ajuste vertical para alinhar com os cards */
+}
+
+.container :global(.swiper-button-next:hover),
+.container :global(.swiper-button-prev:hover) {
+  transform: translateY(-70%) scale(1.2);
+}
+
+.container :global(.swiper-pagination-bullet) {
+  background-color: #aaa !important;
+  opacity: 1;
+}
+
+.container :global(.swiper-pagination-bullet-active) {
+  background-color: var(--indigo-dye) !important;
+  transform: scale(1.2);
+}

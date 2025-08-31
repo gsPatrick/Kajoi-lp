@@ -20,7 +20,7 @@ const Footer = () => {
         <div className={styles.brandBlock}>
           <a href="#" aria-label="Voltar ao topo">
             <Image
-              src="/logo.png"
+              src="/logo1.png"
               alt="Kaoji Assistência Técnica Logo"
               width={160} // Tamanho aumentado, como solicitado
               height={52} // Proporção mantida

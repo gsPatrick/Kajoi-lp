@@ -117,7 +117,7 @@ const Services = () => {
     <motion.section id="servicos" className={styles.servicesSection} /* ... */>
       <div className={styles.container}>
         <h2 className={styles.title}>Nossos Serviços Especializados</h2>
-        <p className={styles.subtitle}>Soluções precisas e transparentes para notebooks, computadores e celulares.</p>
+        <p className={styles.subtitle}>Soluções precisas e transparentes para notebooks e computadores.</p>
         <div className={styles.servicesGrid}>
           {servicesData.map((service, index) => (
             <motion.div

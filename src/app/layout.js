@@ -17,7 +17,7 @@ const roboto = Roboto({
 
 export const metadata = {
   title: "Kaoji Assistência Técnica",
-  description: "Assistência técnica rápida, moderna e confiável para celulares e notebooks.",
+  description: "Assistência e Soluções precisas e transparentes para notebooks e computadores.",
 };
 
 export default function RootLayout({ children }) {

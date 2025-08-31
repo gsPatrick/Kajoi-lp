@@ -20,7 +20,7 @@ const servicesData = [
     type: 'standard',
     icon: <FiHardDrive size={28} />,
     title: "Upgrade de SSD e NVMe",
-    description: "Deixa seu notebook até 10x mais rápido. Usamos as melhores marcas e instalamos/clonamos seu sistema.",
+    description: "Deixa seu notebook ou computador até 10x mais rápido. Usamos as melhores marcas e instalamos/clonamos seu sistema.",
   },
   {
     type: 'standard',
@@ -66,7 +66,7 @@ const servicesData = [
   {
     type: 'featured',
     icon: <BsMotherboard size={28} />,
-    title: "Reparo de Placa-mãe",
+    title: "Reparo de Placa-mãe Notebook",
     description: "Caso a troca fique inviável ou não seja mais comercializada, fazemos o reparo da sua placa mãe.",
     tag: '6 MESES DE GARANTIA'
   },

@@ -43,4 +43,4 @@ const MapSection = () => {
   );
 };
 
-export default MapSection;
+export default MapSection;  

@@ -4,12 +4,11 @@ import { FaWhatsapp } from 'react-icons/fa';
 import styles from './WhatsAppButton.module.css';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "5547988840902"; // NÚMERO DO CLIENTE
-  // MENSAGEM PRONTA
+const phoneNumber = "5547988840902";  // MENSAGEM PRONTA
   const message = "Olá! Vim através do site e gostaria de mais informações.";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  
+
   return (
     <motion.a
       href={whatsappUrl}
